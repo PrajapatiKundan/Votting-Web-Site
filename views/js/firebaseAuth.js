@@ -46,8 +46,8 @@ function signInWithGoogle() {
         document.getElementById('signOutId')
             .setAttribute('style', 'display:inline-block;visibility:visible');
 
-        console.log(data);
+        
     }).catch(function (error) {
-        console.log(error);
+    
     });
 }

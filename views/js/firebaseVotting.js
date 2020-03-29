@@ -13,7 +13,7 @@ function addSeries() {
                 window.location.reload();
             })
             .catch(function (error) {
-                console.log(error);
+            
             })
     } else {
         window.alert("Enter the series");
@@ -23,7 +23,7 @@ function addSeries() {
 }
 
 function upvote(key) {
-    console.log("upvote worked key = " + key);
+    
     var database = firebase.database();
     var user = firebase.auth().currentUser;
     var userId = user.uid;
@@ -41,7 +41,7 @@ function upvote(key) {
             window.location.reload();
         })
         .catch(function (error) {
-            console.log(error);
+        
 
         })
 }
@@ -61,7 +61,7 @@ function downvote(key) {
             window.location.reload();
         })
         .catch(function (error) {
-            console.log(error);
+            
         });
 
 }
