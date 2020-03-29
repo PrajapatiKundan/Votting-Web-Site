@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    <!-- Materializecss cdns-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-analytics.js"></script>
+
+    <script src="js/firebaseConfig.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Best Web Series</h2><br>
+        <button class="btn" onclick={signInWithGoogle()} id="signInId">
+            Sign In With Google
+        </button><br><br>
+        <h3 id="name" style="color:#50bda1;"></h3>
+        <br>
+        <input type="text" id="addSeries" placeholder="add web series">
+        <button class="btn" onclick={addSeries()}>Add</button>
+        <br>
+        <br>
+        <div class="row">
+            <% var keys = Object.keys(series)%>
+            <%keys.forEach(function(key){%>
+            <%var allUsers%>
+            <!-- darek user ni MacDonald hotel na vote no array -->
+            <% if(series[key].votes){%>
+            <% allUsers = Object.keys(series[key].votes)%>
+            <% }else{%>
+            <%allUsers = [];%>
+            <% }%>
+            <div class="col s12 m6">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title"><%=series[key].name%></span>
+                        <p>Votes : <%=allUsers.length%></p>
+                    </div>
+                    <div class="card-action">
+                        <button class="btn" onclick={upvote("<%=key%>")}> <i class="material-icons">thumb_up</i>
+                        </button>
+                        <button class="btn" onclick={downvote("<%=key%>")}> <i class="material-icons">thumb_down</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <%})%>
+        </div>
+
+
+
+
+
+        <button class="btn" id="signOutId" onclick={signOut()}>
+            Sign Out
+        </button><br><br>
+
+        <script src="js/firebaseAuth.js"></script>
+        <script src="js/firebaseVotting.js"></script>
+    </div>
+</body>
+
+</html>

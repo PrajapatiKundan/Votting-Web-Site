@@ -1,0 +1,30 @@
+.container {
+    width: 50%;
+    margin: 70px auto;
+    padding: 20px;
+    background: #f0e68c;
+}
+
+button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 15px 10px;
+    cursor: pointer;
+}
+
+input {
+    outline: 0;
+    background-color: #f0e68c;
+    border-width: 0 0 2px;
+    width: 300px;
+    border-color: black;
+}
+
+input:focus {
+    border-color: green
+}
