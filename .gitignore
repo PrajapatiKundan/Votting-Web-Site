@@ -1,3 +1,6 @@
+.DS_Store
 .env
 views/js/firebaseConfig.js
 node_modules/
+package-lock.json
+blog-app-node-4359e-firebase-adminsdk-kic75-d9fec905fd.json
